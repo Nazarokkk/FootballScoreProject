@@ -2,11 +2,12 @@ package com.example.nazarkorchak.footballscoreproject;
 
 import android.support.v4.app.Fragment;
 
-
-public class LoginActivity extends SingleFragmentActivity {
-
+/**
+ * Created by Mariana on 01.07.2016.
+ */
+public class RegisterActivity extends SingleFragmentActivity {
     @Override
     protected Fragment createFragment() {
-        return new LoginFragment();
+        return new RegisterFragment();
     }
 }
