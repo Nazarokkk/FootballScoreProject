@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">FootballScoreProject</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="user_name_hint">User name</string>
+    <string name="password_hint">Password</string>
+    <string name="login">Login</string>
+    <string name="register_title">Registration</string>
+    <string name="sign_up">Sign up</string>
+    <string name="password_confirm_hint">Confirm Password</string>
 </resources>

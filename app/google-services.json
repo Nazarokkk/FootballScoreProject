@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "587399249832",
+    "firebase_url": "https://football-highlights-b0c0c.firebaseio.com",
+    "project_id": "football-highlights-b0c0c",
+    "storage_bucket": "football-highlights-b0c0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587399249832:android:8d3fa7741af5d443",
+        "android_client_info": {
+          "package_name": "com.example.nazarkorchak.footballscoreproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587399249832-48t25b0c5fl86ohdgk4l2b2mdbf98746.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmPe-RQhz1FjkIxQCcHGuwPzgLmZPs9Eg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
