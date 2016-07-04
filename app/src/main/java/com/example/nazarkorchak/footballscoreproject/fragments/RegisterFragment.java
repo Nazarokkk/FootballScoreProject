@@ -4,23 +4,27 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.nazarkorchak.footballscoreproject.interfaces.CreateUserInterface;
 import com.example.nazarkorchak.footballscoreproject.R;
+import com.example.nazarkorchak.footballscoreproject.Utils;
+import com.example.nazarkorchak.footballscoreproject.interfaces.CreateUserInterface;
 
 /**
  * Created by Mariana on 01.07.2016.
  */
 public class RegisterFragment extends Fragment {
 
+    private View view;
     private Button signUpButton;
     private EditText emailEditText;
     private EditText passwordEditText;
     private EditText confirmPasswordEditText;
+
     private CreateUserInterface createUserInterface;
 
     @Override
@@ -36,7 +40,8 @@ public class RegisterFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_register, container, false);
+        view = inflater.inflate(R.layout.fragment_register, container, false);
+        setupListener(view);
         initUI(view);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
@@ -45,16 +50,43 @@ public class RegisterFragment extends Fragment {
                 String password = passwordEditText.getText().toString();
                 String email = emailEditText.getText().toString();
 
-                // LoginManager loginManager = new LoginManager(getActivity());
-
-                if (!password.isEmpty() && !email.isEmpty() && confirmPasswordEditText.getText().toString().equals(password)) {
-                    createUserInterface.createUser(email, password);
-                    // loginManager.createUser(email, password);
+                if (!password.isEmpty() && !email.isEmpty() &&
+                        confirmPasswordEditText.getText().toString().equals(password)) {
+                    createUserInterface.createUser(email, password, view);
+                } else {
+                    Utils.showErrorSnackBar(getActivity(), view, "Fields aren't correct!");
                 }
             }
         });
 
         return view;
+    }
+
+    public void setupListener(View view) {
+        if (!(view instanceof EditText)) {
+            view.setOnTouchListener(new View.OnTouchListener() {
+
+                public boolean onTouch(View v, MotionEvent event) {
+                    clearKeyboardAndFocus();
+                    return false;
+                }
+            });
+        }
+
+        if (view instanceof ViewGroup) {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                View innerView = ((ViewGroup) view).getChildAt(i);
+                setupListener(innerView);
+            }
+        }
+    }
+
+    private void clearKeyboardAndFocus() {
+        Utils.hideKeyboard(getActivity());
+        emailEditText.clearFocus();
+        passwordEditText.clearFocus();
+        confirmPasswordEditText.clearFocus();
+        signUpButton.requestFocus();
     }
 
     private void initUI(View view) {

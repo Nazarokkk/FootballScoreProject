@@ -3,11 +3,15 @@ package com.example.nazarkorchak.footballscoreproject.manangers;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
 
+import com.example.nazarkorchak.footballscoreproject.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.concurrent.Executor;
 
 /**
  * Created by Lenovo on 04.07.2016.
@@ -22,7 +26,7 @@ public class LoginManager {
         this.context = context;
     }
 
-    public void createUser(String login, String password){
+    public void createUser(String login, String password, final View view){
         mAuth.createUserWithEmailAndPassword(login, password)
                 .addOnCompleteListener((Activity) context, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -31,10 +35,9 @@ public class LoginManager {
 
                         if (!task.isSuccessful()) {
                             Log.d("creating new user", task.getException().getMessage().toString());
+                            Utils.showErrorSnackBar(context, view, task.getException().getMessage().toString());
                         }
-
                     }
                 });
-
     }
 }

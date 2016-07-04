@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016. MileCatcher, Inc.
+  ~ http://MileCatcher.com
+  ~ All rights reserved
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/blue"/>
+
+    <corners android:radius="3dip"/>
+
+    <padding
+        android:left="0dip"
+        android:top="0dip"
+        android:right="0dip"
+        android:bottom="0dip" />
+</shape>
