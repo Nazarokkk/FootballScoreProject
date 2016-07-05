@@ -34,11 +34,6 @@ public class RegisterFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_register, container, false);
         setupListener(view);
@@ -52,7 +47,7 @@ public class RegisterFragment extends Fragment {
 
                 if (!password.isEmpty() && !email.isEmpty() &&
                         confirmPasswordEditText.getText().toString().equals(password)) {
-                    createUserInterface.createUser(email, password, view);
+                    createUserInterface.createUser(email, password);
                 } else {
                     Utils.showErrorSnackBar(getActivity(), view, "Fields aren't correct!");
                 }
