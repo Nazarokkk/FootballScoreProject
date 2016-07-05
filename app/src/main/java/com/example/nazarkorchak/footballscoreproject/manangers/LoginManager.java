@@ -1,31 +1,30 @@
-package com.example.nazarkorchak.footballscoreproject;
+package com.example.nazarkorchak.footballscoreproject.manangers;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 
-import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
- * Created by Mariana on 01.07.2016.
+ * Created by Lenovo on 04.07.2016.
  */
-public class RegisterActivity extends SingleFragmentActivity {
+public class LoginManager {
 
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    private Context context;
 
-        Firebase.setAndroidContext(this);
+    public LoginManager(Context context) {
         mAuth = FirebaseAuth.getInstance();
+        this.context = context;
+    }
 
-        mAuth.createUserWithEmailAndPassword("mkhodachnyk@gmail.com", "445513086")
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+    public void createUser(String login, String password){
+        mAuth.createUserWithEmailAndPassword(login, password)
+                .addOnCompleteListener((Activity) context, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(Task<AuthResult> task) {
                         Log.d("creating new user", "createUserWithEmail:onComplete:" + task.isSuccessful());
@@ -37,10 +36,5 @@ public class RegisterActivity extends SingleFragmentActivity {
                     }
                 });
 
-    }
-
-    @Override
-    protected Fragment createFragment() {
-        return new RegisterFragment();
     }
 }

@@ -1,9 +1,11 @@
-package com.example.nazarkorchak.footballscoreproject;
+package com.example.nazarkorchak.footballscoreproject.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+
+import com.example.nazarkorchak.footballscoreproject.R;
 
 /**
  * Created by Mariana on 01.07.2016.

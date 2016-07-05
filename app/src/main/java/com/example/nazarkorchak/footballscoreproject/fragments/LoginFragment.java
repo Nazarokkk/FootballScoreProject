@@ -1,4 +1,4 @@
-package com.example.nazarkorchak.footballscoreproject;
+package com.example.nazarkorchak.footballscoreproject.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.nazarkorchak.footballscoreproject.R;
+import com.example.nazarkorchak.footballscoreproject.activities.RegisterActivity;
 
 /**
  * Created by Mariana on 30.06.2016.
