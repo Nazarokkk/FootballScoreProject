@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
     android:background="@color/white"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     android:orientation="vertical"
     android:textAlignment="center">
 
