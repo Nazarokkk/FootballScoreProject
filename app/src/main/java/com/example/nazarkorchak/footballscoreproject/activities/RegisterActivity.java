@@ -1,7 +1,7 @@
 package com.example.nazarkorchak.footballscoreproject.activities;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.view.View;
 
 import com.example.nazarkorchak.footballscoreproject.R;
 import com.example.nazarkorchak.footballscoreproject.Utils;
@@ -29,7 +29,7 @@ public class RegisterActivity extends SingleFragmentActivity implements CreateUs
 
     @Override
     public void isSuccess() {
-
+        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
     }
 
     @Override

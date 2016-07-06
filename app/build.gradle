@@ -11,6 +11,9 @@ dependencies {
     compile 'com.android.support:support-v4:24.0.0'
     compile 'com.firebase:firebase-client-android:2.3.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.mxn.soul:flowingdrawer-core:1.2.5'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.android.support:recyclerview-v7:22.+'
 }
 android {
     compileSdkVersion 23
@@ -34,6 +37,10 @@ android {
         exclude 'META-INF/LICENSE-FIREBASE.txt'
         exclude 'META-INF/NOTICE'
 
+    }
+
+    repositories {
+        jcenter()
     }
 
 //    dependencies {
