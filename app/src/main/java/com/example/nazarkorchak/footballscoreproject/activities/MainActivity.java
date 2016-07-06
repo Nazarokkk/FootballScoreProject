@@ -38,7 +38,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupToolbar();
+        setupNavigationDrawer();
+        setupStartFragment();
+    }
 
+    private void setupNavigationDrawer() {
         mLeftDrawerLayout = (LeftDrawerLayout) findViewById(R.id.id_drawer_layout);
 
         FragmentManager fm = getSupportFragmentManager();
@@ -49,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         }
         mLeftDrawerLayout.setFluidView(mFlowingView);
         mLeftDrawerLayout.setMenuFragment(mMenuFragment);
-        setupFeed();
-
     }
 
     protected void setupToolbar() {
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setupFeed() {
+    private void setupStartFragment() {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.main_content, new ResultsFragment(), null)

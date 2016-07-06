@@ -2,7 +2,10 @@ package com.example.nazarkorchak.footballscoreproject.fragments.drawer;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -23,14 +26,20 @@ public class MyMenuFragment extends MenuFragment {
         super.onCreate(savedInstanceState);
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_menu, container,
-                false);
-       // ivMenuUserProfilePhoto = (ImageView) view.findViewById(R.id.ivMenuUserProfilePhoto);
-       // setupHeader();
-        return  setupReveal(view) ;
+        View view = inflater.inflate(R.layout.fragment_menu, container, false);
+        NavigationView vNavigation = (NavigationView) view.findViewById(R.id.vNavigation);
+        vNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                Log.e("Menu", "Title:" + menuItem.getTitle());
+                return false;
+            }
+        });
+        // ivMenuUserProfilePhoto = (ImageView) view.findViewById(R.id.ivMenuUserProfilePhoto);
+        // setupHeader();
+        return setupReveal(view);
     }
 
     private void setupHeader() {
@@ -45,10 +54,11 @@ public class MyMenuFragment extends MenuFragment {
 //                .into(ivMenuUserProfilePhoto);
     }
 
-    public void onOpenMenu(){
+    public void onOpenMenu() {
         Toast.makeText(getActivity(), "onOpenMenu", Toast.LENGTH_SHORT).show();
     }
-    public void onCloseMenu(){
-        Toast.makeText(getActivity(),"onCloseMenu",Toast.LENGTH_SHORT).show();
+
+    public void onCloseMenu() {
+        Toast.makeText(getActivity(), "onCloseMenu", Toast.LENGTH_SHORT).show();
     }
 }

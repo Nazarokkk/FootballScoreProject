@@ -49,6 +49,4 @@ public class Utils {
         SharedPreferences prefs = context.getSharedPreferences(Constants.LOGIN_PREF, Context.MODE_PRIVATE);
         return prefs.getString(key, "");
     }
-
-
 }
