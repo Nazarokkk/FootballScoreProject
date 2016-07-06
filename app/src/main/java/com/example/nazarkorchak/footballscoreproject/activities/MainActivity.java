@@ -3,8 +3,6 @@ package com.example.nazarkorchak.footballscoreproject.activities;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -55,13 +53,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupFeed() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this) {
-            @Override
-            protected int getExtraLayoutSpace(RecyclerView.State state) {
-                return 300;
-            }
-        };
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.main_content, new ResultsFragment(), null)

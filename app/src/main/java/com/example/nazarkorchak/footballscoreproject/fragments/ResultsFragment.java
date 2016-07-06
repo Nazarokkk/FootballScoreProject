@@ -15,11 +15,9 @@ import com.example.nazarkorchak.footballscoreproject.R;
 
 public class ResultsFragment extends Fragment {
 
-    private View view;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_result, container, false);
+        View view = inflater.inflate(R.layout.fragment_result, container, false);
         return view;
     }
 }
