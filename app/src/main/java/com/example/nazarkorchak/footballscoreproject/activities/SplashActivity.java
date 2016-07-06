@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.nazarkorchak.footballscoreproject.activities.LoginActivity;
-
 /**
  * Created by Mariana on 29.06.2016.
  */

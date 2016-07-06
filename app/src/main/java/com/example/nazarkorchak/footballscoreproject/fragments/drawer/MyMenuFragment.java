@@ -1,4 +1,4 @@
-package com.example.nazarkorchak.footballscoreproject.fragments;
+package com.example.nazarkorchak.footballscoreproject.fragments.drawer;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

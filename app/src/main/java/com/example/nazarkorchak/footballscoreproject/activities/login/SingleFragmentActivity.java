@@ -1,4 +1,4 @@
-package com.example.nazarkorchak.footballscoreproject.activities;
+package com.example.nazarkorchak.footballscoreproject.activities.login;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

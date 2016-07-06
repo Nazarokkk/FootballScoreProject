@@ -1,4 +1,4 @@
-package com.example.nazarkorchak.footballscoreproject;
+package com.example.nazarkorchak.footballscoreproject.utils;
 
 /**
  * Created by nazaryikorchak on 06.07.16.

@@ -1,4 +1,4 @@
-package com.example.nazarkorchak.footballscoreproject;
+package com.example.nazarkorchak.footballscoreproject.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+
+import com.example.nazarkorchak.footballscoreproject.R;
+import com.example.nazarkorchak.footballscoreproject.utils.Constants;
 
 /**
  * Created by nazaryikorchak on 04.07.16.

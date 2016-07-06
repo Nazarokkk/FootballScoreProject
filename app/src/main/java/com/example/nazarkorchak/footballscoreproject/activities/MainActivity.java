@@ -7,10 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.example.nazarkorchak.footballscoreproject.Constants;
+import com.example.nazarkorchak.footballscoreproject.utils.Constants;
 import com.example.nazarkorchak.footballscoreproject.R;
-import com.example.nazarkorchak.footballscoreproject.Utils;
-import com.example.nazarkorchak.footballscoreproject.fragments.MyMenuFragment;
+import com.example.nazarkorchak.footballscoreproject.utils.Utils;
+import com.example.nazarkorchak.footballscoreproject.activities.login.LoginActivity;
+import com.example.nazarkorchak.footballscoreproject.fragments.drawer.MyMenuFragment;
 import com.example.nazarkorchak.footballscoreproject.fragments.ResultsFragment;
 import com.mxn.soul.flowingdrawer_core.FlowingView;
 import com.mxn.soul.flowingdrawer_core.LeftDrawerLayout;

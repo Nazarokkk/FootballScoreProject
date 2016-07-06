@@ -1,12 +1,13 @@
-package com.example.nazarkorchak.footballscoreproject.activities;
+package com.example.nazarkorchak.footballscoreproject.activities.login;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 
-import com.example.nazarkorchak.footballscoreproject.Constants;
+import com.example.nazarkorchak.footballscoreproject.utils.Constants;
 import com.example.nazarkorchak.footballscoreproject.R;
-import com.example.nazarkorchak.footballscoreproject.Utils;
-import com.example.nazarkorchak.footballscoreproject.fragments.RegisterFragment;
+import com.example.nazarkorchak.footballscoreproject.utils.Utils;
+import com.example.nazarkorchak.footballscoreproject.activities.MainActivity;
+import com.example.nazarkorchak.footballscoreproject.fragments.login.RegisterFragment;
 import com.example.nazarkorchak.footballscoreproject.interfaces.CreateUserInterface;
 import com.example.nazarkorchak.footballscoreproject.interfaces.LoginResponseInterface;
 import com.example.nazarkorchak.footballscoreproject.manangers.LoginManager;
