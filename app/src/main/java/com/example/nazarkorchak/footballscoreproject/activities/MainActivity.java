@@ -1,12 +1,15 @@
 package com.example.nazarkorchak.footballscoreproject.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.example.nazarkorchak.footballscoreproject.Constants;
 import com.example.nazarkorchak.footballscoreproject.R;
+import com.example.nazarkorchak.footballscoreproject.Utils;
 import com.example.nazarkorchak.footballscoreproject.fragments.MyMenuFragment;
 import com.example.nazarkorchak.footballscoreproject.fragments.ResultsFragment;
 import com.mxn.soul.flowingdrawer_core.FlowingView;
@@ -18,6 +21,16 @@ import com.mxn.soul.flowingdrawer_core.LeftDrawerLayout;
 public class MainActivity extends AppCompatActivity {
 
     private LeftDrawerLayout mLeftDrawerLayout;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!Utils.getBooleanLoginPreference(this, Constants.IS_USER_LOGIN)) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
