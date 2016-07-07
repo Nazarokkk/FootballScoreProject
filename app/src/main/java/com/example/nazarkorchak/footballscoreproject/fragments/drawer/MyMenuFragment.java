@@ -1,17 +1,17 @@
 package com.example.nazarkorchak.footballscoreproject.fragments.drawer;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.nazarkorchak.footballscoreproject.R;
+import com.example.nazarkorchak.footballscoreproject.interfaces.DrawerItemClickInterface;
 import com.mxn.soul.flowingdrawer_core.MenuFragment;
 
 /**
@@ -20,6 +20,13 @@ import com.mxn.soul.flowingdrawer_core.MenuFragment;
 public class MyMenuFragment extends MenuFragment {
 
     private ImageView ivMenuUserProfilePhoto;
+    private DrawerItemClickInterface drawerItemClickInterface;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        drawerItemClickInterface = (DrawerItemClickInterface) activity;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,8 +40,23 @@ public class MyMenuFragment extends MenuFragment {
         vNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                Log.e("Menu", "Title:" + menuItem.getTitle());
-                return false;
+
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_results:
+                        drawerItemClickInterface.onResultsClick();
+                        return true;
+                    case R.id.menu_account:
+                        drawerItemClickInterface.onAccountClick();
+                        return true;
+                    case R.id.menu_bookmakers:
+                        drawerItemClickInterface.onBookmakersClick();
+                        return true;
+                    case R.id.menu_logout:
+                        drawerItemClickInterface.onLogoutClick();
+                        return true;
+                    default:
+                        return false;
+                }
             }
         });
         // ivMenuUserProfilePhoto = (ImageView) view.findViewById(R.id.ivMenuUserProfilePhoto);
@@ -55,10 +77,10 @@ public class MyMenuFragment extends MenuFragment {
     }
 
     public void onOpenMenu() {
-        Toast.makeText(getActivity(), "onOpenMenu", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "onOpenMenu", Toast.LENGTH_SHORT).show();
     }
 
     public void onCloseMenu() {
-        Toast.makeText(getActivity(), "onCloseMenu", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "onCloseMenu", Toast.LENGTH_SHORT).show();
     }
 }
